@@ -26,7 +26,7 @@ namespace CRUD_Razor_2_1.Pages.BookList
 
         }
 
-        public async Task<IActionResult> onPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -34,9 +34,7 @@ namespace CRUD_Razor_2_1.Pages.BookList
             }
 
             _db.Books.Add(Book);
-
             await _db.SaveChangesAsync();
-
             return RedirectToPage("Index");
         }
     }
